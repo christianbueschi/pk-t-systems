@@ -1,0 +1,41 @@
+.o-downloads {
+	@include background-light();
+	
+	&__inner {
+		@extend .l-container;
+		text-align: center;
+	}
+	
+	&__list {
+		display: inline-block;
+	}
+	
+	&__item {
+		text-align: left;
+		margin-bottom: $spacing;
+		
+		@include media($large-up) {
+			margin-bottom: $spacing * 2;
+		}
+		
+		&:last-of-type {
+			margin-bottom: 0;
+		}
+	}
+	
+	&__link {
+		text-decoration: none;
+		
+		@include media($large-up) {
+			@include type-setting(0);
+		}
+		
+		&:hover {
+
+		}
+		
+		&[href$=".pdf"] &__icon {
+			//@extend .icon-document-pdf;
+		}
+	}
+}

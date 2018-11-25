@@ -1,0 +1,43 @@
+.a-plus {
+    position: absolute;
+    right: 0;
+	transform: translateY(-50%);
+	height: 16px;
+	
+	&:before,
+	&:after {
+		content: '';
+		position: absolute;
+		top: 50%;
+		transition: $transition;
+		background: $color-grey;
+		width: 20px;
+		height: 1px;
+		-webkit-backface-visibility: hidden;
+        backface-visibility: hidden;
+        right: 0;
+        opacity: 1;
+        visibility: visible;
+	}
+	
+	&:before {
+		
+	}
+	
+	&:after {
+	    transform: rotate(90deg);
+	}
+	
+	.is-open & {
+		
+		&:before {
+            opacity: 0;
+            visibility: hidden;
+		}
+		
+		&:after {
+            transform: rotate(180deg);
+		}
+	}
+	
+}

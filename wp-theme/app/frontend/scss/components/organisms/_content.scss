@@ -1,0 +1,8 @@
+.o-content {
+
+    @include span-columns(8);
+    
+    @include media($large-up) {
+    
+    }
+}

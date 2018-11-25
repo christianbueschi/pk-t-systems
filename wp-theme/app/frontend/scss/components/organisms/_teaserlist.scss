@@ -1,0 +1,37 @@
+.o-teaserlist {
+	padding: $spacing * 2;
+
+	&__inner {
+		@extend .l-container;
+		@extend .l-container--ultranarrow;
+	}
+
+	&__title {
+		@include type-setting(0);
+		margin-bottom: $spacing * 2;
+		
+		@include media($large-up) {
+			@include type-setting(1);
+		}
+	}
+
+	&__list {
+		
+		@include media($large-up) {
+			margin-bottom: $spacing * 4;
+		}
+	}
+
+	&__item {
+
+	}
+
+	&__btn {
+		color: $color-green;
+		text-decoration: none;
+
+		&:hover {
+			text-decoration: underline;
+		}
+	}
+}

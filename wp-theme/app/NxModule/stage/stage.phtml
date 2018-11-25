@@ -1,0 +1,13 @@
+
+<div class="o-stage__figure__outer">
+	<figure class="o-stage__figure">
+	<? $image = get_sub_field('image'); ?>
+		<img src="<?= $image['url']?>" alt="" class="o-stage__image">
+	</figure>
+	<div class="o-stage__image__span"></div>
+</div>
+<div class="o-stage__text">
+	<h1 class="o-stage__title"><?= get_sub_field('title') ?></h1>
+	<h2 class="o-stage__intro"><?= get_sub_field('intro') ?></h1>
+</div>
+

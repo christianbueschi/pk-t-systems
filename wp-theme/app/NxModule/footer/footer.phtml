@@ -1,0 +1,95 @@
+<div class="o-footer__inner">
+
+	<h2 class="o-footer__title">
+		<?= $data->contact_title ?>
+	</h2>
+
+	<ul class="o-footer__contacts">
+
+		<?php while (have_rows('contact', 'options')): the_row(); ?>
+
+			<li class="o-footer__contacts__item">
+				
+				<h5 class="o-footer__contacts__item__title"><?= get_sub_field('contact_title') ?></h5>
+
+				<? $image = get_sub_field('contact_picture') ?>
+
+				<div class="o-footer__contacts__item__wrapper">
+					<figure class="o-footer__contacts__item__figure">
+						<img src="<?= $image['url'] ?>" alt="" class="o-footer__contacts__item__picture">
+					</figure>
+
+					<div class="o-footer__contacts__item__text">
+						<h5 class="o-footer__contacts__item__name">
+							<?= get_sub_field('contact_name') ?>
+						</h5>
+
+						<p class="o-footer__contacts__item__address">
+							<?= get_sub_field('contact_address') ?>
+						</p>
+
+						<a href="tel:<?= get_sub_field('contacts_phone') ?>" class="o-footer__contacts__item__phone">
+							<?= get_sub_field('contact_phone') ?>
+						</a>
+
+						<a href="<?= get_sub_field('contact_email') ?>" class="o-footer__contacts__item__email">
+							<?= get_sub_field('contact_email') ?>
+						</a>
+					</div>
+				</div>
+				<p class="o-footer__contacts__item__info">
+					<?= get_sub_field('contact_info') ?>	
+				</p>
+			</li>
+
+		<? endwhile; ?>
+
+	</ul>
+
+	<section class="o-footer__address__outer">
+
+		<h3 class="o-footer__address__title">
+			<?= $data->address_title ?>
+		</h3>
+		<address class="o-footer__address">
+			<?= $data->address ?>
+		</address>
+
+	</section>
+
+	<h2 class="o-footer__title">
+		<?= $data->sitemap_title ?>
+	</h2>
+
+	<ul class="o-footer__sitemap">
+
+		<?php foreach ($data->nav as $nav) : ?>
+
+			<li class="o-footer__sitemap__item">
+				<a href="<?= $nav['url'] ?>" title="<?= $nav['title'] ?>" class="o-footer__sitemap__link">
+					<?= $nav['title'] ?>
+				</a>
+
+				<?php if (isset($nav['sub'])) : ?>
+
+					<ul class="o-footer__sitemap__sub__list">
+						
+						<?php foreach ($nav['sub'] as $subnav) : ?>
+
+							<li class="o-footer__sitemap__sub__item">
+								<a href="<?= $subnav['url'] ?>" class="o-footer__sitemap__sub__link" target="<?= $subnav['target'] ?>">
+									<?= $subnav['title'] ?>
+								</a>
+							</li>
+
+						<?php endforeach; ?>
+
+					</ul>
+
+				<?php endif; ?>
+
+			</li>
+		<?php endforeach; ?>
+	</ul>
+
+</div>

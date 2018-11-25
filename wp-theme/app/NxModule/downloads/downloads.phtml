@@ -1,0 +1,26 @@
+<div class="o-downloads__inner">
+
+	<?php if (have_rows('download_list')) : ?>
+
+		<ul class="o-downloads__list">
+
+		<?php while (have_rows('download_list')) : the_row() ?>
+
+			<li class="o-downloads__item">
+
+				<?php $file = get_sub_field('download_link') ?>
+				<a class="o-downloads__link" href="<?= $file['url']?>" target="_blank" title="<?= $file['url']?>" rel="noopener">
+					<i class="o-downloads__link__icon icon-"></i>
+					<?= get_sub_field('download_link_title') ?>
+				</a>
+
+			</li>
+
+		<?php endwhile; ?>
+
+		</ul>
+
+	<?php endif; ?>
+
+</div>
+

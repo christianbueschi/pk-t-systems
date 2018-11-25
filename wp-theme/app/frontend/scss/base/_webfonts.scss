@@ -1,0 +1,4 @@
+@include font-face("Telegrotesk", "./../fonts/telegrotesk-normal", $file-formats: eot svg woff) {font-weight: 400;};
+@include font-face("Telegrotesk", "./../fonts/telegrotesk-halbfett", $file-formats: eot svg woff) {font-weight: 500;};
+@include font-face("Telegrotesk", "./../fonts/telegrotesk-fett", $file-formats: eot svg woff) {font-weight: 600;};
+@include font-face("Teleicon", "./../fonts/teleicon-ui", $file-formats: eot svg woff);

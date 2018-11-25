@@ -1,0 +1,23 @@
+
+<div class="o-cta__inner">
+	<p class="o-cta__text">
+		<?= get_field('text') ?>
+	</p>
+	<ul class="o-cta__list">
+		<?php while (have_rows('items')): the_row(); ?>
+			<li class="o-cta__item">
+				 <a href="<?= get_sub_field('link') ?>" class="o-cta__item__link">
+					 <? $icon = get_sub_field('icon') ?>
+					<figure class="o-cta__item__figure">
+						<img src="<?= $icon['url'] ?>" alt="" class="o-cta__item__icon">
+					</figure>
+					 <h3 class="o-cta__item__title">
+						 <?= get_sub_field('title') ?>
+					</h3>
+				 </a>
+			</li>
+		<? endwhile; ?>
+	</ul>
+</div>
+	
+

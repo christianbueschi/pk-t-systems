@@ -1,0 +1,53 @@
+.l-page {
+	padding-top: $header-height-s;	
+
+	@include media($large-up) {
+		padding-top: $header-height-l;
+	}
+}
+
+.l-header {
+	padding: $spacing * 2;
+	@include outer-container();
+
+	@include media($large-up) {
+		padding: $spacing * 4 $spacing * 2;
+	}
+}
+
+.l-section {
+	padding: 0 $spacing * 2;
+	@include outer-container();
+
+	@include media($large-up) {
+	
+	}
+}
+
+.l-nav {
+	
+}
+
+.l-container {
+	background: transparent;
+	@include outer-container();
+	padding: $spacing * 2;
+
+	@include media($large-up) {
+		padding: $spacing * 4 0;
+	}
+
+	&--narrow {
+		
+		@include media($large-up) {
+			max-width: 1000px;
+		}
+	}
+	
+	&--ultranarrow {
+		
+		@include media($large-up) {
+			max-width: 700px;
+		}
+	}
+}

@@ -1,0 +1,33 @@
+<ul class="o-nav__list">
+
+	<?php foreach ($data->nav as $nav) : ?>
+
+		<li class="o-nav__item js-nav-item">
+			<a href="<?= $nav['url'] ?>" title="<?= $nav['title'] ?>" class="o-nav__link">
+				<?= $nav['title'] ?>
+			</a>
+			<?php if (isset($nav['sub'])) : ?>
+				<a class="o-nav__toggle a-plus js-toggle-subnav"></a>
+			<?php endif; ?>
+
+			<?php if (isset($nav['sub'])) : ?>
+
+				<ul class="o-nav__sub__list js-nav-sublist">
+					<div class="o-nav__sub__list__inner">
+
+						<?php foreach ($nav['sub'] as $subnav) : ?>
+
+							<li class="o-nav__sub__item">
+								<a href="<?= $subnav['url'] ?>" class="o-nav__sub__link" target="<?= $subnav['target'] ?>"><?= $subnav['title'] ?></a>
+							</li>
+
+						<?php endforeach; ?>
+					</div>
+
+				</ul>
+
+			<?php endif; ?>
+
+		</li>
+	<?php endforeach; ?>
+</ul>

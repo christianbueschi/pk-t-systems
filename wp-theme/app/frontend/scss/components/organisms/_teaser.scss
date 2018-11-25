@@ -1,0 +1,48 @@
+.o-teaser {
+	margin-bottom: $spacing * 3;
+	
+	&__link {
+		text-decoration: none;
+		color: $color-grey;
+
+	}
+
+	&__title {
+		@include type-setting(-1);
+		//margin-bottom: $spacing;
+	}
+
+	&__date {
+		@include type-setting(-2);
+		margin-bottom: $spacing / 2;
+	}
+
+	&__more {
+		@include type-setting(-1);
+		display: inline-block;
+		color: $color-green;
+		padding-bottom: $spacing * 2;
+		bottom: $spacing;
+		border-bottom: 1px solid $color-grey;
+
+
+		@include media($large-up) {
+			
+			&:hover {
+
+				.icon {
+					left: 15px;
+				}
+			}
+		}
+
+		.icon {
+			font-size: 30px;
+			position: relative;
+			top: 5px;
+			left: 5px;
+			transition: $transition;
+		}
+	}
+	
+}

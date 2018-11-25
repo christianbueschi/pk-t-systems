@@ -1,0 +1,28 @@
+<div class="o-header__inner">
+
+	<a class="o-header__brand a-logo" href="/" role="link" aria-label="Go to Home">
+		<img src="<?= $data->logo ?>" alt="Logo">
+	</a>
+
+	<?= module('nav')
+		->tag('nav')
+		->classes('js-nav')
+		->ctrl() ?>
+
+	<div class="o-header__controls">	
+		<button class="icon ion-ios-search js-search" role="button" aria-label="Toggle Search"></button>
+		
+		<button class="o-header__controls--nav js-nav-toggle" type="button" role="button" aria-label="Toggle Navigation">
+ 	 		<span class="o-header__controls--nav__lines js-lines"></span>
+		</button>
+	</div>
+	
+</div>
+
+	<?=
+
+	module('search')
+		->tag('section')
+		->classes('js-search-body')
+		->ctrl();
+	?>

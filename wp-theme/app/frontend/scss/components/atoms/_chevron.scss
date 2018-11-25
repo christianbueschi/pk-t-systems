@@ -1,0 +1,87 @@
+.a-chevron {
+	
+	$chevronWidth: 35px;
+	$chevronWidth--small: 15px;
+	
+	position: absolute;
+	right: 0;
+	top: 50%;
+	transform: translateY(-50%);
+	width: $chevronWidth--small;
+	height: 16px;
+	
+	@include media($medium-up) {
+		width: $chevronWidth;
+	}
+	
+	&:before,
+	&:after {
+		content: '';
+		position: absolute;
+		top: 50%;
+		transition: $transition;
+		border-radius: 3px;
+		background: $color-grey;
+		width: 10px;
+		height: 1px;
+		-webkit-backface-visibility: hidden;
+		backface-visibility: hidden;
+		
+		@include media($medium-up) {
+			width: 20px;
+			height: 3px;
+		}
+	}
+	
+	&:before {
+		right: 8px;
+		left: auto;
+		transform: rotate(35deg);
+		
+		@include media($medium-up) {
+			left: 0;
+		}
+	}
+	
+	&:after {
+		left: auto;
+		right: 0;
+		transform: rotate(-35deg);
+		
+		@include media($medium-up) {
+			left: 15px;
+		}
+	}
+	
+	.is-open & {
+		
+		&:before {
+			transform: rotate(-35deg);
+		}
+		
+		&:after {
+			transform: rotate(35deg);
+		}
+	}
+	
+	&--small {
+		width: $chevronWidth--small;
+		
+		&:before,
+		&:after {
+			width: 10px;
+			height: 1px;
+		}
+		
+		&:before {
+			right: 8px;
+			left: auto;
+		}
+		
+		&:after {
+			left: auto;
+			right: 0;
+		}
+	}
+	
+}

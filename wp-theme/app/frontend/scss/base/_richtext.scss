@@ -1,0 +1,177 @@
+.richtext {
+	
+	@include type-setting(-2);
+	
+	@include media($medium-up) {
+		@include type-setting(-1);
+	}
+	
+	p {
+		@include type-setting(-2);
+		margin-bottom: $spacing * 2;
+		
+		@include media($medium-up) {
+			@include type-setting(-1);
+			margin-bottom: $spacing * 3;
+		}
+		
+		&:empty {
+			margin-bottom: 0;
+		}
+	}
+	
+	a {
+		@extend .a-link;
+	}
+	
+	strong {
+		font-weight: 500;
+	}
+	
+	ul {
+		margin-bottom: $spacing;
+		
+		li {
+			margin-left: $spacing * 3;
+			margin-bottom: $spacing / 2;
+			list-style: disc;
+			
+			@include media($medium-up) {
+				margin-bottom: $spacing;
+			}
+			
+			ul {
+				margin-top: $spacing;
+				
+				li {
+					list-style: circle;
+					
+					ul {
+						li {
+							list-style: square;
+							margin-top: 0;
+						}
+					}
+					
+				}
+			}
+		}
+	}
+	
+	ol {
+		margin-bottom: $spacing;
+		list-style: decimal;
+		
+		li {
+			margin-left: $spacing * 3;
+			margin-bottom: $spacing / 2;
+			
+			@include media($medium-up) {
+				margin-bottom: $spacing;
+			}
+		}
+	}
+	
+	h2 {
+		@include type-setting(0);
+		margin-bottom: $spacing * 3;
+		
+		@include media($medium-up) {
+			@include type-setting(1);
+		}
+		
+	}
+	
+	h3 {
+		@include type-setting(-1);
+		margin: $spacing * 4 0 $spacing * 2 0;
+		
+		@include media($medium-up) {
+			@include type-setting(0);
+		}
+	}
+	
+	h4 {
+		@include type-setting(-1);
+		margin: $spacing * 4 0 $spacing * 2 0;
+		
+		@include media($medium-up) {
+			@include type-setting(0);
+		}
+	}
+	
+	figure {
+		margin-bottom: $spacing * 2;
+		
+		@include media($medium-up) {
+			margin-left: -50px;
+			margin-right: -50px;
+		}
+		
+		@include media($medium-up) {
+			margin-left: -100px;
+			margin-right: -100px;
+		}
+		
+		img {
+			width: auto;
+			height: auto;
+		}
+		
+		figcaption {
+			@include type-setting(-2);
+			font-style: italic;
+		}
+		
+		// Overwirte WordPress Styles
+		&.size-medium,
+		&.size-full {
+			margin-right: 0;
+			margin-left: 0;
+		}
+		
+	}
+	
+	table {
+		width: auto;
+		margin: $spacing * 2 0;
+		
+		@include media($medium-up) {
+			margin-left: -20%;
+			margin-right: -20%;
+		}
+		
+		@include media($large-up) {
+			margin-left: -20%;
+			margin-right: -20%;
+		}
+		
+		tr {
+			border-bottom: 1px solid $color-grey;
+		
+		}
+		
+		th {
+			font-weight: 500;
+			padding: $spacing $spacing / 2 $spacing $spacing / 2;
+		}
+		
+		td {
+			padding: $spacing;
+			@include type-setting(-2);
+		}
+	}
+	
+	code {
+		@include type-setting(-2);
+		font-family: Monaco, "Andale Mono", "Courier New", Courier, monospace;
+	}
+	
+	// Overwirte WordPress Styles
+	.aligncenter {
+		text-align: center;
+		display: block;
+		margin-left: auto;
+		margin-right: auto;
+	}
+}

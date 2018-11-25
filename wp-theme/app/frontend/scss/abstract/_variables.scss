@@ -1,0 +1,75 @@
+// -----------------------------------------------------------------------------
+// Variables
+// -----------------------------------------------------------------------------
+
+
+// Fonts
+$font-path                  : '../fonts';
+$iconfont-path              : '../fonts';
+
+$icon-font-family           : 'teleicon';
+$font-family                : 'Telegrotesk';
+
+$font-weight-regular        : 400;
+$font-weight-semibold       : 500;
+$font-weight-bold           : 600;
+
+////////////////////////////////////////////////////////////
+
+// Header
+
+$header-height-s:               80px;
+$header-height-s--sticky:       50px;
+$header-height-l:               110px;
+
+////////////////////////////////////////////////////////////
+
+// Brand Colors
+
+$color-green:					#009999;
+$color-grey:					#222222;
+
+////////////////////////////////////////////////////////////
+
+// Grid
+$gutter: 25px;
+$grid-columns: 12;
+$max-width: 1440px;
+
+// Spacings
+$spacing	    : 1rem;
+
+////////////////////////////////////////////////////////////
+
+
+// Transitions
+$transition: all .25s cubic-bezier(0.4, 0, 0.2, 1);
+
+////////////////////////////////////////////////////////////
+
+// Breakpoints and Mediaqueries
+$bp-0		: 21.25em; // 340px
+$bp-1		: 42em; // 672px
+$bp-2		: 64em; // 1024px
+$bp-3		: 90em; // 1440px
+$bp-4		: 115em; // 1840px
+$bp-5		: 140em; // 2240px
+
+$emPxRatio: 1/16;
+
+$xsmall-up: new-breakpoint(min-width ($bp-0  + $emPxRatio) 4);
+$small: new-breakpoint(max-width $bp-1 4);
+$medium: new-breakpoint(min-width ($bp-1  + $emPxRatio) max-width $bp-2 12);
+$medium-down: new-breakpoint(max-width $bp-2 12);
+$medium-up: new-breakpoint(min-width ($bp-1  + $emPxRatio) 12);
+$large: new-breakpoint(min-width ($bp-2  + $emPxRatio) max-width $bp-3 12);
+$large-down: new-breakpoint(max-width $bp-2 12);
+$large-up: new-breakpoint(min-width ($bp-2  + $emPxRatio) 12);
+$xlarge-down: new-breakpoint(max-width $bp-3 12);
+$xlarge-up: new-breakpoint(min-width ($bp-3 + $emPxRatio) 12);
+$xxlarge-down: new-breakpoint(max-width ($bp-4) 12);
+$xxlarge-up: new-breakpoint(min-width ($bp-4  + $emPxRatio) 12);
+$xxxlarge-up: new-breakpoint(min-width ($bp-5  + $emPxRatio) 12);
+
+
+////////////////////////////////////////////////////////////

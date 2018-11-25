@@ -1,0 +1,104 @@
+.o-header {
+	position: fixed;
+	top: 0;
+	z-index: 999;
+	width: 100%;
+	transition: $transition;
+	background-color: white;
+	box-shadow: 0px 3px 8px 0px rgba(201,201,201,0.5);
+	
+	&__inner {
+		position: relative;
+		@include outer-container();
+		height: $header-height-s;
+		display: flex;
+		align-items: center;
+		transition: $transition;
+		//box-shadow: 0px 3px 8px 0px rgba(201,201,201,0.5);
+		
+		@include media($large-up) {
+			height: $header-height-l;
+			box-shadow: none;
+		}
+	}
+	
+	&__brand {
+		display: inline-block;
+		position: relative;
+		
+		img {
+			height: 80px;
+			max-width: inherit;
+
+			@include media($large-up) {
+				height: 110px;
+				margin-right: $spacing * 4;
+			}
+		}
+	}
+	
+	&__controls {
+		margin-left: auto;
+		padding-right: $spacing * 2;
+		
+		@include media($large-up) {
+			margin-left: initial;
+		}
+
+		.icon {
+			font-size: 33px;
+			color: $color-grey;
+		}
+		
+		&--nav {
+			height: 33px;
+			padding: 0;
+			position: relative;
+			left: 6px;
+
+			@include media($large-up) {
+				display: none;
+			}
+
+			&__lines {
+				display: block;
+				@include iconLine();
+				position: relative;
+
+				.is-nav-open & {
+					background-color: transparent;
+				}
+
+				&:before,
+				&:after {
+					content: '';
+					display: block;
+					@include iconLine();
+					position: absolute;
+
+					.is-nav-open & {
+						top: 0;
+						transform-origin: 50% 50%;
+					}
+				}
+
+				&:before {
+					top: 10px;
+
+					.is-nav-open & {
+						transform: rotate(45deg);
+					}
+				}
+
+				&:after {
+					bottom: 10px;
+
+					.is-nav-open & {
+						transform: rotate(-45deg);
+					}
+				}
+			}
+
+		}
+	}
+}

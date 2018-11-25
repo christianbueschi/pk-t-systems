@@ -1,0 +1,46 @@
+.a-checkbox {
+	cursor: pointer;
+	
+	span {
+		margin-left: $spacing;
+		
+		&:before {
+			content: '';
+			position: absolute;
+			left: 0;
+			background-color: white;
+			border-radius: 5px;
+			width: 22px;
+			height: 22px;
+			border: 2px solid $color-green;
+			
+			.o-footer__newsletter & {
+				border-color: white;
+			}
+		}
+	}
+	
+	input:checked + span {
+		
+		&:before {
+			border-radius: 5px;
+			border-color: $color-green;
+		}
+		
+		&:after {
+			content: "\e00b";
+			position: absolute;
+			left: 2px;
+			width: 20px;
+			height: 20px;
+			font-family: $icon-font-family;
+			color: $color-green;
+			font-weight: 600;
+			
+			/* Better Font Rendering =========== */
+			-webkit-font-smoothing: antialiased;
+			-moz-osx-font-smoothing: grayscale;
+		}
+		
+	}
+}

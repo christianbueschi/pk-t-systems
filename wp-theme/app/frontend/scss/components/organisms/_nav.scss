@@ -1,0 +1,124 @@
+.o-nav {
+	display: none;
+	position: fixed;
+	width: 100%;
+	background-color: white;
+	padding: 0 $spacing * 2;
+	top: $header-height-s;
+
+	@include media($large-up) {
+		display: block !important;
+		position: static;
+	}
+
+	&__list {
+	
+	}
+	
+	&__item {
+		position: relative;
+		padding-bottom: $spacing; 
+
+		@include media($large-up) {
+			float: left;
+			padding-bottom: 0;
+			margin-right: $spacing * 2;
+			display: flex;
+			justify-content: center;
+			cursor: pointer;
+			border-bottom: 2px solid white;
+			transition: $transition;
+
+			&:hover {
+				border-bottom: 2px solid $color-green;
+			}
+		}
+	}
+	
+	&__toggle {
+		display: inline-block;
+		width: 40px;
+		top: 14px;
+		
+		@include media($large-up) {
+			display: none;
+		}
+	}
+	
+	&__link {
+		color: $color-grey;
+		text-decoration: none;
+		@include type-setting(-1);
+	}
+	
+	&__sub {
+		
+		&__list {
+			display: none;
+			color: $color-grey;
+
+			@include media($large-up) {
+				display: block !important;
+				visibility: hidden;
+				opacity: 0;			
+				transition: $transition;
+			}
+
+			.o-nav__item:hover > & {
+
+				@include media($large-up) {
+					visibility: visible;
+					opacity: 1;				
+				}
+			}
+
+			@include media($large-up) {
+				position: absolute;
+				top: $spacing * 3;
+			}
+			
+			&__inner {
+				
+				@include media($large-up) {
+					position: relative;
+					background-color: $color-green;
+					color: white;
+					padding: $spacing * 2;
+					margin-top: $spacing * 2;
+					box-shadow: 0 2px 5px 0 rgba(34,34,34,.5); 
+	
+					&:before {
+						content: '';
+						position: absolute;
+						top: -10px;
+						left: calc(50% - 5px);
+						border-style: solid;
+						border-width: 0 10px 10px 10px;
+						border-color: transparent transparent $color-green transparent;
+					}
+				}
+				
+			}
+		}
+		
+		&__item {
+		
+		}
+		
+		&__link {
+			color: inherit;
+			text-decoration: none;
+			@include type-setting(-2);
+			
+			@include media($large-up) {
+				@include type-setting(-2);
+				white-space: nowrap;
+
+				&:hover {
+					//text-decoration: underline;
+					border-bottom: 1px solid white;
+				}
+			}
+		}
+	}
+}

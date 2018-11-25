@@ -1,0 +1,43 @@
+body, html {
+	font-family: $font-family;
+	color: $color-grey;
+}
+
+body {
+
+	&:after{
+		content: '';
+		background-color: rgba(0,0,0,.1);
+		transition: $transition;
+	}
+
+	&.is-nav-open {
+		overflow: hidden;
+		
+		&:after{
+			content: '';
+			position: absolute;
+			top: 0;
+			left: 0;
+			height: 100vh;
+			width: 100%;
+			background-color: rgba(0,0,0,.5);
+		}
+	}
+}
+
+img {
+	max-width: 100%;
+}
+
+p {
+	margin-bottom: $spacing * 2;
+}
+
+button {
+	background: transparent;
+	border: none;
+	-webkit-appearance: none;
+	cursor: pointer;
+	outline: none;
+}

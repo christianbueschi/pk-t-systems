@@ -1,0 +1,59 @@
+<?php if (have_rows('items')): ?>
+
+	<ul class="o-accordion__list js-accordion-list">
+
+	<?php while (have_rows('items')) : the_row() ?>
+
+
+		<?php
+			$title = get_sub_field('title');
+			$titleToLower = strtolower($title);
+			$titleDashed = str_replace(' ', '-', $titleToLower);
+			$d1 = array("ä" , "ö", "ü", "ß", "Ä", "Ö", "Ü"); 
+   			$d2 = array("ae" , "oe", "ue", "ss", "Ae", "Oe", "Ue"); 
+   			$d3 = str_replace($d1, $d2, $titleDashed);
+			$id = preg_replace('/[^A-Za-z0-9\-]/', '', $d3);
+		?>
+
+		<li class="o-accordion__item js-accordion-item" data-anchor="<?= $id ?>">
+			<h3 class="o-accordion__item__title js-accordion-title">
+				<?= $title ?>
+				<span class="a-plus"></span>
+			</h3>
+			<div class="o-accordion__item__body js-accordion-body">
+				<div class="o-accordion__item__body__text">
+					<?= get_sub_field('content') ?>
+				</div>
+
+				<? if (get_sub_field('downloads')): ?>
+					<div class="o-accordion__downloads__outer">
+						<h4 class="o-accordion__downloads__title">
+							<?= get_sub_field('downloads_title') ?>
+						</h4>
+						<i class="icon ion-ios-download"></i>
+
+						<ul class="o-accordion__downloads">
+
+							<? while (have_rows('downloads')) : the_row() ?>
+								<? $file = get_sub_field('file');?>
+								<? $fileExtension = pathinfo($file['url'], PATHINFO_EXTENSION); ?>
+								<li class="o-accordion__downloads__item" data-file-extension="<?= $fileExtension ?>">
+									<a href="<?= $file['url'] ?>" class="o-accordion__downloads__link" target="_blank">
+										<? $fileName = get_sub_field('file_name'); ?>
+										<?= empty($fileName) ? $file['title'] : $fileName?>
+									</a>
+								</li>
+							<? endwhile; ?>
+
+						</ul>
+					</div>
+				<? endif; ?>
+			</div>
+		</li>
+
+	<?php endwhile; ?>
+	</ul>
+
+<?php endif; ?>
+
+

@@ -1,0 +1,33 @@
+.o-article {
+
+    &__header {
+        padding: $spacing * 2;
+    }
+
+    &__title {
+        @include type-setting(0);
+    }
+
+    &__date {
+        display: block;
+        @include type-setting(-2);
+        margin-bottom: $spacing;
+    }
+
+    &__content {
+        padding: $spacing * 2;
+
+        a {
+            color: $color-green;
+        }
+    
+        ul {
+            list-style: disc;
+            margin-left: $spacing * 2;
+            
+            li {
+    
+            }
+        }
+    }
+}
